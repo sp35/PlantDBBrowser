@@ -30,6 +30,7 @@ class DataBase(models.Model):
     citation = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE, blank=True, null=True)
+    approved = models.BooleanField(default=False)
 
     class Meta:
         verbose_name = "Database"
