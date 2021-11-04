@@ -1,19 +1,52 @@
 {% extends "app/base.html" %}
+{% load static %}
 {% block content %}
-    <div class="row">
-        {% for db in databases %}
-            <div class="col mt-5 mr-3 d-flex align-items-stretch">
-                <div class="card bg-light" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ db.name }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ db.citation|default:"uncited" }}</h6>
-                        <p class="card-text">{{ db.description }}</p>
-                        <a href="{{ db.url }}" target="_blank" rel="noopener noreferrer" class="card-link">Visit</a>
-                    </div>
-                </div>
-            </div>
-        {% empty %}
-            <li>No databases yet.</li>
-        {% endfor %}
-    </div>
+    <!-- db-table -->
+    <table id="db-table" class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Category</th>
+                <th scope="col">Subcategory</th>
+                <th scope="col">Citation</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for db in databases %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td><a href="{{ db.url }}" target="_blank" rel="noopener noreferrer" class="card-link">{{db.name}}</a></td>
+                    <td>{{db.description}}</td>
+                    <td>{{db.category.name}}</td>
+                    <td>{{db.sub_category|default:"-"}}</td>
+                    <td>{{db.citation|default:"uncited"}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {{ categories|json_script:'categories' }}
+
+    <script type="text/javascript">
+        const categories = JSON.parse(document.getElementById('categories').textContent);
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedCategory = urlParams.get('category', null) ? urlParams.get('category', null) : categories[0];
+        $(document).ready(function () {
+            $('#db-table').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'collection',
+                        text: selectedCategory,
+                        buttons: categories.map(c => ({
+                            text: c,
+                            action: () => window.location.href=`?category=${c}`,
+                        })),
+                    },
+                ]
+            });
+        });
+    </script>
 {% endblock %}
