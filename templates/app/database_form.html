@@ -1,0 +1,52 @@
+{% extends "app/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="post" onsubmit="alert('Thank you for your contribution!');" id="db-suggest-form">
+        {% csrf_token %}
+        {% if form.errors %}
+            <ul class="errorlist mb-5">
+                {% if form.non_field_errors %}
+                <li>{{ form.non_field_errors }}</li>
+                {% endif %}
+                {% for field in form %}
+                {% if field.errors %}
+                <li>
+                    {{ field.label }}
+                    <ul class="errorlist">
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div class="row mb-3">
+            <div class="col-6">
+                {{ form.name|as_crispy_field }}
+            </div>
+            <div class="col-6">
+                {{ form.category|as_crispy_field }}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-6">
+                {{ form.url|as_crispy_field }}
+            </div>
+            <div class="col-6">
+                {{ form.sub_category|as_crispy_field }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                {{ form.description|as_crispy_field }}
+            </div>
+            <div class="col-6">
+                {{ form.citation|as_crispy_field }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success mt-3">Submit</button>
+    </form>
+{% endblock %}

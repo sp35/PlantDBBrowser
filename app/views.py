@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.urls.base import reverse
 from django.views.generic import ListView
+from django.views.generic.edit import CreateView
 
 from .models import Category, DataBase
 
@@ -23,3 +24,11 @@ class DatabaseListView(ListView):
         context = super().get_context_data(**kwargs)
         context["categories"] = list(Category.objects.values_list("name", flat=True))
         return context
+
+
+class DatabaseSuggestView(CreateView):
+    model = DataBase
+    fields = ["name", "description", "url", "citation", "category", "sub_category"]
+
+    def get_success_url(self) -> str:
+        return reverse("home")

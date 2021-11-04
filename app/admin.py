@@ -6,7 +6,7 @@ from .models import Category, DataBase, SubCategory
 @admin.register(DataBase)
 class DataBaseAdmin(admin.ModelAdmin):
     list_display = ["name", "url", "category", "sub_category"]
-    list_filter = ["category","sub_category"]
+    list_filter = ["approved", "category","sub_category"]
     search_fields = ["name"]
 
 
