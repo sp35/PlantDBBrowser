@@ -56,11 +56,11 @@ class Gene(models.Model):
     species = models.ForeignKey(Species, on_delete=models.SET_NULL, null=True) # Plant Species
     name = models.CharField(max_length=256) # Gene Name
     host = models.CharField(max_length=256) # Host in which characterized
-    transcription_factor = models.CharField(max_length=256) # Transcription Factors
+    # transcription_factor = models.CharField(max_length=256) # Transcription Factors
     symbol = models.CharField(max_length=256) # Gene Symbol
     description = models.TextField() # Description
-    family = models.CharField(max_length=256) # Gene Family
-    accession_number = models.CharField(max_length=256) # Accession No.
+    # family = models.CharField(max_length=256) # Gene Family
+    # accession_number = models.CharField(max_length=256) # Accession No.
     function = models.CharField(max_length=256) # Function
     pathway_category = models.CharField(max_length=256) # Pathway Category
     phenotype = models.CharField(max_length=256) # Phenotype
@@ -74,6 +74,24 @@ class Gene(models.Model):
     class Meta:
         verbose_name = "Gene"
         verbose_name_plural = "Genes"
+
+
+    def __str__(self) -> str:
+        return self.name
+
+
+class GeneSuggestion(models.Model):
+    name = models.CharField(max_length=256)
+    email = models.EmailField(max_length=256)
+    gene_name = models.CharField(max_length=256)
+    publication_year = models.PositiveBigIntegerField(null=True)
+    phone_number = models.PositiveBigIntegerField(null=True)
+    pubmed_id = models.CharField(max_length=256)
+    comments = models.TextField()
+
+    class Meta:
+        verbose_name = "GeneSuggestion"
+        verbose_name_plural = "GeneSuggestions"
 
 
     def __str__(self) -> str:

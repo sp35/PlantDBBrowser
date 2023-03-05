@@ -14,18 +14,15 @@ from app.models import Gene, Species
 
 
 def gene_excel_parser():
-    loc = os.path.join(PATH, "genes.xlsx")
+    loc = os.path.join(PATH, "Gene List-Millet Database-for training.xlsx")
     book = xlrd.open_workbook(loc)
 
     ordered_columns = [
         "species",
         "name",
         "host",
-        "transcription_factor",
         "symbol",
         "description",
-        "family",
-        "accession_number",
         "function",
         "pathway_category",
         "phenotype",
@@ -38,13 +35,13 @@ def gene_excel_parser():
     for index, sheet in enumerate(book.sheets()):
 
         nrows = sheet.nrows
-        ncols = sheet.ncols
+        # ncols = sheet.ncols
 
         gene_dict = {}
         for row in range(1, nrows):
             species, _ = Species.objects.get_or_create(name=str(sheet.cell(row, 1).value).strip())
 
-            for col in range (2, ncols):
+            for col in range (2, len(ordered_columns)+1):
                 gene_dict[ordered_columns[col-1]] = str(sheet.cell(row, col).value).strip()
             gene, _ = Gene.objects.get_or_create(**gene_dict, species=species, approved=True)
 
