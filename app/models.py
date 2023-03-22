@@ -85,7 +85,7 @@ class GeneSuggestion(models.Model):
     contributor_name = models.CharField(max_length=256)
     contributor_email = models.EmailField(max_length=256)
     contributor_phone_number = models.CharField(max_length=16, blank=True)
-    contributor_comments = models.TextField()
+    contributor_comments = models.TextField(blank=True)
 
     class Meta:
         verbose_name = "GeneSuggestion"
