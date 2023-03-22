@@ -6,7 +6,7 @@ from django.views.generic.edit import CreateView
 from django.db.models import Q
 
 from .models import Category, DataBase, Gene, Species
-from .serializers import GeneSerializer, GeneSuggestSerializer
+from .serializers import GeneSerializer
 
 
 class DatabaseListView(ListView):
@@ -53,14 +53,14 @@ class GeneList(generics.ListAPIView):
         if exp_method is not None:
             filters = filters & Q(experimental_method=exp_method)
 
-        return Gene.objects.filter(filters)
+        return Gene.objects.filter(filters, approved=True)
 
 
 class GeneMetadata(APIView):
     def get(self, request):
         species = Species.objects.values_list("name", flat=True).distinct()
-        biological_functions = Gene.objects.values_list("function", flat=True).distinct()
-        experimental_methods = Gene.objects.values_list(
+        biological_functions = Gene.objects.filter(approved=True).values_list("function", flat=True).distinct()
+        experimental_methods = Gene.objects.filter(approved=True).values_list(
             "experimental_method", flat=True
         ).distinct()
         return Response(
@@ -73,7 +73,7 @@ class GeneMetadata(APIView):
 
 
 class GeneSuggest(generics.CreateAPIView):
-    serializer_class = GeneSuggestSerializer
+    serializer_class = GeneSerializer
 
 # GET gene/metadata
 # GET gene/search?species=x&bio_fxn=y&exp_method=z&gene_family=a

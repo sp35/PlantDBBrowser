@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-pfayp#-hatr@269za$nntnmn3s583z!-(q_b32-6d4cxh0zy9i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["dreamweb.azurewebsites.net"]
+ALLOWED_HOSTS = ["dreamweb.azurewebsites.net", "localhost"]
 
 
 # Application definition

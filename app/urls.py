@@ -4,8 +4,8 @@ from .views import DatabaseListView, DatabaseSuggestView, GeneList, GeneMetadata
 
 
 urlpatterns = [
-    path("", DatabaseListView.as_view(), name="home"),
-    path("suggest", DatabaseSuggestView.as_view()),
+    # path("", DatabaseListView.as_view(), name="home"),
+    # path("suggest", DatabaseSuggestView.as_view()),
     path("genes", GeneList.as_view()),
 	path("genes/metadata", GeneMetadata.as_view()),
 	path("genes/suggest", GeneSuggest.as_view()),

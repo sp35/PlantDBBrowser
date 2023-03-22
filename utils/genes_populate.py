@@ -28,7 +28,7 @@ def gene_excel_parser():
         "phenotype",
         "experimental_method",
         "references",
-        "year",
+        "publication_year",
         "publication_link",
     ]
 

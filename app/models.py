@@ -58,17 +58,18 @@ class Gene(models.Model):
     host = models.CharField(max_length=256) # Host in which characterized
     # transcription_factor = models.CharField(max_length=256) # Transcription Factors
     symbol = models.CharField(max_length=256) # Gene Symbol
-    description = models.TextField() # Description
+    description = models.TextField(blank=True) # Description
     # family = models.CharField(max_length=256) # Gene Family
     # accession_number = models.CharField(max_length=256) # Accession No.
     function = models.CharField(max_length=256) # Function
     pathway_category = models.CharField(max_length=256) # Pathway Category
     phenotype = models.CharField(max_length=256) # Phenotype
     experimental_method = models.CharField(max_length=256)# Experimental Method
-    references = models.CharField(max_length=256) # Reference
-    year = models.CharField(max_length=256) # Year of Publication
+    references = models.CharField(max_length=256, blank=True) # Reference
+    publication_year = models.CharField(max_length=256, blank=True) # Year of Publication
     publication_link = models.URLField() # Link to Publication
 
+    linked_suggestion = models.ForeignKey("GeneSuggestion", on_delete=models.SET_NULL, null=True)
     approved = models.BooleanField(default=False)
 
     class Meta:
@@ -81,13 +82,10 @@ class Gene(models.Model):
 
 
 class GeneSuggestion(models.Model):
-    name = models.CharField(max_length=256)
-    email = models.EmailField(max_length=256)
-    gene_name = models.CharField(max_length=256)
-    publication_year = models.PositiveBigIntegerField(null=True)
-    phone_number = models.PositiveBigIntegerField(null=True)
-    pubmed_id = models.CharField(max_length=256)
-    comments = models.TextField()
+    contributor_name = models.CharField(max_length=256)
+    contributor_email = models.EmailField(max_length=256)
+    contributor_phone_number = models.CharField(max_length=16, blank=True)
+    contributor_comments = models.TextField()
 
     class Meta:
         verbose_name = "GeneSuggestion"
@@ -95,4 +93,4 @@ class GeneSuggestion(models.Model):
 
 
     def __str__(self) -> str:
-        return self.name
+        return self.contributor_name
