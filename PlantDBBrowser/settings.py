@@ -58,8 +58,9 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "https://red-cliff-0ae92281e.2.azurestaticapps.net",
 ]
-CSRF_TRUSTED_ORIGINS = ["localhost:3000", "127.0.0.1:3000"]
+CSRF_TRUSTED_ORIGINS = ["localhost:3000", "127.0.0.1:3000", "red-cliff-0ae92281e.2.azurestaticapps.net"]
 CSRF_COOKIE_NAME = "csrftoken"
 CORS_ALLOW_CREDENTIALS = True
 
