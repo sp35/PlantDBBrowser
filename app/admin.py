@@ -14,4 +14,4 @@ class GeneAdmin(admin.ModelAdmin):
 # admin.site.register(SubCategory)
 # admin.site.register(Gene)
 # admin.site.register(Species)
-# admin.site.register(GeneSuggestion)
+admin.site.register(GeneSuggestion)
