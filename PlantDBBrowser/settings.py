@@ -152,3 +152,6 @@ STATIC_ROOT = BASE_DIR / "static"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+EMAIL_CONNECTION_STRING = os.getenv("AZURE_COMMUNICATION_SERVICE_CONNECTION_STRING")
+EMAIL_SENDER_ADDRESS = os.getenv("AZURE_COMMUNICATION_SERVICE_SENDER_ADDRESS")

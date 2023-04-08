@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, DataBase, SubCategory, Gene, Species, GeneSuggestion
+from .models import Category, DataBase, SubCategory, Gene, Species, GeneSuggestion, Maintainer
 
 
 @admin.register(Gene)
@@ -15,3 +15,4 @@ class GeneAdmin(admin.ModelAdmin):
 # admin.site.register(Gene)
 # admin.site.register(Species)
 admin.site.register(GeneSuggestion)
+admin.site.register(Maintainer)

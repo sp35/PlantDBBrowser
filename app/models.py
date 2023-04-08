@@ -94,3 +94,11 @@ class GeneSuggestion(models.Model):
 
     def __str__(self) -> str:
         return self.contributor_name
+
+
+class Maintainer(models.Model):
+    name = models.CharField(max_length=256)
+    email = models.EmailField(max_length=256)
+
+    def __str__(self) -> str:
+        return self.name
