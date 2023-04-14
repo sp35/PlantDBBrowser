@@ -18,16 +18,23 @@ class GeneSuggestSerializer(rfs.ModelSerializer):
 
 class GeneSerializer(rfs.ModelSerializer):
     species = SpeciesSerializer()
-    linked_suggestion = GeneSuggestSerializer()
 
     class Meta:
         model = Gene
-        exclude = ('id', )
+        exclude = ('id', 'linked_suggestion', 'approved',)
     
     def to_representation(self, instance: Gene):
         ret = super().to_representation(instance)
         ret['species_name'] = instance.species.name if instance.species else None
         return ret
+
+
+class GeneCreateSerializer(GeneSerializer):
+    linked_suggestion = GeneSuggestSerializer()
+
+    class Meta:
+        model = Gene
+        exclude = ('id', 'approved',)
 
     def create(self, validated_data):
         with transaction.atomic():

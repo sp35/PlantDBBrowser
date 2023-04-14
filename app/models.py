@@ -102,3 +102,21 @@ class Maintainer(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class GeneBlastFastaType(models.TextChoices):
+    NUCLEOTIDE = 'n', 'nucleotide'
+    PROTEIN = 'p', 'protein'
+
+
+class GeneBlast(models.Model):
+    gene = models.ForeignKey(Gene, on_delete=models.CASCADE, related_name="blasts")
+    fasta_type = models.CharField(max_length=1, choices=GeneBlastFastaType.choices, default=GeneBlastFastaType.NUCLEOTIDE)
+    fasta = models.TextField()
+
+    def __str__(self) -> str:
+        return f"{self.gene} - blast{self.fasta_type}"
+
+    def save(self, *args, **kwargs):
+        self.fasta = "".join(self.fasta.split())
+        super(GeneBlast, self).save(*args, **kwargs)

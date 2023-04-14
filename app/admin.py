@@ -1,11 +1,11 @@
 from django.contrib import admin
 
-from .models import Category, DataBase, SubCategory, Gene, Species, GeneSuggestion, Maintainer
+from .models import Category, DataBase, SubCategory, Gene, Species, GeneSuggestion, Maintainer, GeneBlast
 
 
 @admin.register(Gene)
 class GeneAdmin(admin.ModelAdmin):
-    list_display = ["name", "species", "approved"]
+    list_display = ["name", "species", "symbol", "approved"]
     list_filter = ["approved", "species","function", "experimental_method"]
     search_fields = ["name"]
 
@@ -16,3 +16,4 @@ class GeneAdmin(admin.ModelAdmin):
 # admin.site.register(Species)
 admin.site.register(GeneSuggestion)
 admin.site.register(Maintainer)
+admin.site.register(GeneBlast)

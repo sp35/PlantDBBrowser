@@ -5,8 +5,8 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 from django.db.models import Q
 
-from .models import Category, DataBase, Gene, Species
-from .serializers import GeneSerializer
+from .models import Category, DataBase, Gene, Species, GeneBlastFastaType, GeneBlast
+from .serializers import GeneCreateSerializer, GeneSerializer
 
 
 class DatabaseListView(ListView):
@@ -42,9 +42,10 @@ class GeneList(generics.ListAPIView):
         species = self.request.GET.get("species", None)
         bio_fxn = self.request.GET.get("function", None)
         exp_method = self.request.GET.get("experimental_method", None)
+        blastn = self.request.GET.get("blastn", "")
+        blastp = self.request.GET.get("blastp", "")
 
         filters = Q()
-        print(species)
         if species is not None:
 
             filters = filters & Q(species__name=species)
@@ -52,6 +53,13 @@ class GeneList(generics.ListAPIView):
             filters = filters & Q(function=bio_fxn)
         if exp_method is not None:
             filters = filters & Q(experimental_method=exp_method)
+
+        if blastn != "":
+            blastn = "".join(blastn.split())
+            filters = filters & Q(blasts__fasta_type=GeneBlastFastaType.NUCLEOTIDE, blasts__fasta__icontains=blastn)
+        if blastp != "":
+            blastp = "".join(blastp.split())
+            filters = filters & Q(blasts__fasta_type=GeneBlastFastaType.PROTEIN, blasts__fasta__icontains=blastp)
 
         return Gene.objects.filter(filters, approved=True)
 
@@ -73,7 +81,7 @@ class GeneMetadata(APIView):
 
 
 class GeneSuggest(generics.CreateAPIView):
-    serializer_class = GeneSerializer
+    serializer_class = GeneCreateSerializer
 
 # GET gene/metadata
 # GET gene/search?species=x&bio_fxn=y&exp_method=z&gene_family=a
