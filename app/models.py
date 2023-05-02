@@ -134,7 +134,7 @@ class BlastDatabaseFile(models.Model):
         if self.fasta_type == GeneBlastFastaType.PROTEIN:
             dbtype = "prot"
             out_path = settings.PROT_BLASTDB_PATH
-        return subprocess.run([settings.NCBI_MAKEBLASTDB_PATH, "-title", f"DREAM Blast-{dbtype} Database", "-in", self.fasta.path, "-dbtype", dbtype, "-out", out_path], capture_output=True, check=True)
+        return subprocess.run([settings.NCBI_MAKEBLASTDB_PATH, "-title", f"DREAM_blast_{dbtype}_db", "-in", self.fasta.path, "-dbtype", dbtype, "-out", out_path], capture_output=True, check=True)
 
     def save(self, *args, **kwargs):
         with transaction.atomic():
