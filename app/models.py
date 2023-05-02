@@ -1,4 +1,8 @@
+import subprocess
+
 from django.db import models
+from django.conf import settings
+from django.db import transaction
 
 
 class Category(models.Model):
@@ -109,14 +113,47 @@ class GeneBlastFastaType(models.TextChoices):
     PROTEIN = 'p', 'protein'
 
 
-class GeneBlast(models.Model):
-    gene = models.ForeignKey(Gene, on_delete=models.CASCADE, related_name="blasts")
-    fasta_type = models.CharField(max_length=1, choices=GeneBlastFastaType.choices, default=GeneBlastFastaType.NUCLEOTIDE)
-    fasta = models.TextField()
+"""
+BlastDatabaseFile: Model to maintain fasta files for blast
+"""
+class BlastDatabaseFile(models.Model):
+    fasta_type = models.CharField(max_length=1, choices=GeneBlastFastaType.choices, default=GeneBlastFastaType.NUCLEOTIDE, unique=True)
+    fasta = models.FileField(upload_to='blast/')
+    makeblastdb_output = models.TextField()
+
+    class Meta:
+        verbose_name = "BlastDatabaseFile"
+        verbose_name_plural = "BlastDatabaseFiles"
 
     def __str__(self) -> str:
-        return f"{self.gene} - blast{self.fasta_type}"
+        return f"blast{self.fasta_type}"
+    
+    def _generate_db(self):
+        dbtype = "nucl"
+        out_path = settings.NUCL_BLASTDB_PATH
+        if self.fasta_type == GeneBlastFastaType.PROTEIN:
+            dbtype = "prot"
+            out_path = settings.PROT_BLASTDB_PATH
+        return subprocess.run([settings.NCBI_MAKEBLASTDB_PATH, "-title", f"DREAM Blast-{dbtype} Database", "-in", self.fasta.path, "-dbtype", dbtype, "-out", out_path], capture_output=True, check=True)
 
     def save(self, *args, **kwargs):
-        self.fasta = "".join(self.fasta.split())
-        super(GeneBlast, self).save(*args, **kwargs)
+        with transaction.atomic():
+            super(BlastDatabaseFile, self).save(*args, **kwargs)
+            self.makeblastdb_output = self._generate_db()
+            super(BlastDatabaseFile, self).save(*args, **kwargs)
+
+
+class BlastSearchResultStatus(models.TextChoices):
+    PENDING = 'pending', 'pending'
+    COMPLETED = 'completed', 'completed'
+
+
+class BlastSearchResult(models.Model):
+    query_fasta = models.FileField(upload_to='blast_search/')
+    fasta_type = models.CharField(max_length=1, choices=GeneBlastFastaType.choices, default=GeneBlastFastaType.NUCLEOTIDE)
+    result_file = models.FileField(upload_to='blast_search/', blank=True, null=True)
+    result_json_file = models.FileField(upload_to='blast_search/', blank=True, null=True)
+    status = models.CharField(max_length=10, choices=BlastSearchResultStatus.choices, default=BlastSearchResultStatus.PENDING)
+
+    def __str__(self) -> str:
+        return f"blast{self.fasta_type}-result-{self.id}"

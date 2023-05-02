@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import DatabaseListView, DatabaseSuggestView, GeneList, GeneMetadata, GeneSuggest
+from .views import DatabaseListView, DatabaseSuggestView, GeneList, GeneMetadata, GeneSuggest, BlastSearch
 
 
 urlpatterns = [
@@ -9,4 +9,6 @@ urlpatterns = [
     path("genes", GeneList.as_view()),
 	path("genes/metadata", GeneMetadata.as_view()),
 	path("genes/suggest", GeneSuggest.as_view()),
+	path("blast-search", BlastSearch.as_view()),
+	path("blast-search/results/<int:result_id>", BlastSearch.as_view()),
 ]

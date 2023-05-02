@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "rest_framework",
     "app",
+    'background_task',
 ]
 
 MIDDLEWARE = [
@@ -148,10 +149,29 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "static"
 
+MEDIA_ROOT = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+FILE_UPLOAD_HANDLERS = [
+    'django.core.files.uploadhandler.TemporaryFileUploadHandler',
+]
+
 EMAIL_CONNECTION_STRING = os.getenv("AZURE_COMMUNICATION_SERVICE_CONNECTION_STRING")
 EMAIL_SENDER_ADDRESS = os.getenv("AZURE_COMMUNICATION_SERVICE_SENDER_ADDRESS")
+
+# NCBI_BLAST_SUITE_PATH = os.path.join(BASE_DIR, "utils", "ncbi", "macosx")
+NCBI_BLAST_SUITE_PATH = os.path.join(BASE_DIR, "utils", "ncbi", "linux")
+NCBI_MAKEBLASTDB_PATH = os.path.join(NCBI_BLAST_SUITE_PATH, "makeblastdb")
+NCBI_BLAST_NUCL_PATH = os.path.join(NCBI_BLAST_SUITE_PATH, "blastn")
+NCBI_BLAST_PROT_PATH = os.path.join(NCBI_BLAST_SUITE_PATH, "blastp")
+
+NUCL_BLASTDB_PATH = os.path.join(MEDIA_ROOT, "blast_nucl_db", "db")
+PROT_BLASTDB_PATH = os.path.join(MEDIA_ROOT, "blast_prot_db", "db")
+
+# Temp TODO: for avoiding race conditions during blast analysis
+BACKGROUND_TASK_RUN_ASYNC=False
