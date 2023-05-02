@@ -1,0 +1,437 @@
+PACKAGE_NAME: blast
+PACKAGE_VERSION: 2.14.0
+PACKAGE_SIGNATURE: Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+PACKAGE_CONFIG: IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+
+>>>>>  blastp
+
+blastp: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:52:02
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  blastp
+
+
+
+>>>>>  blastn
+
+blastn: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:51:04
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  blastn
+
+
+
+>>>>>  blastx
+
+blastx: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:52:34
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  blastx
+
+
+
+>>>>>  tblastn
+
+tblastn: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 15:01:38
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  tblastn
+
+
+
+>>>>>  tblastx
+
+tblastx: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 15:02:22
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  tblastx
+
+
+
+>>>>>  psiblast
+
+psiblast: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:59:06
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  psiblast
+
+
+
+>>>>>  rpsblast
+
+rpsblast: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:59:37
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  rpsblast
+
+
+
+>>>>>  rpstblastn
+
+rpstblastn: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 15:00:09
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  rpstblastn
+
+
+
+>>>>>  makembindex
+
+makembindex: 2.14.0
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:58:30
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  makembindex
+
+ NCBI C++ Toolkit: 27.0.665497
+   Build-Date:  Apr  5 2023 14:07:35
+   Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+   Revision:  665497
+   Subversion-Revision:  665497
+   Stable-Components-Version:  27
+   Production-Version:  20230304
+
+
+
+
+>>>>>  segmasker
+
+segmasker: 1.0.0
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 15:00:51
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  segmasker
+
+
+
+>>>>>  dustmasker
+
+dustmasker: 1.0.0
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:56:58
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  dustmasker
+
+
+
+>>>>>  windowmasker
+
+windowmasker: 1.0.0
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 15:03:23
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  windowmasker
+
+ window-masker-algorithm:1.0.0
+
+ windowmasker-statistics-algorithm-version:1.0.0
+
+ windowmasker-statistics-format-version:ascii 1.1.0
+
+ windowmasker-statistics-format-version:binary 1.1.0
+
+ windowmasker-statistics-format-version:oascii 1.1.0
+
+ windowmasker-statistics-format-version:obinary 1.1.0
+
+
+
+>>>>>  deltablast
+
+deltablast: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:56:36
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  deltablast
+
+
+
+>>>>>  makeblastdb
+
+makeblastdb: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:57:42
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  makeblastdb
+
+
+
+>>>>>  blastdbcmd
+
+blastdbcmd: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:50:15
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  blastdbcmd
+
+
+
+>>>>>  blastdb_aliastool
+
+blastdb_aliastool: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:49:16
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  blastdb_aliastool
+
+
+
+>>>>>  convert2blastmask
+
+convert2blastmask: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:52:52
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  convert2blastmask
+
+
+
+>>>>>  blastdbcheck
+
+blastdbcheck: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:49:58
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  blastdbcheck
+
+
+
+>>>>>  makeprofiledb
+
+makeprofiledb: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:58:45
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  makeprofiledb
+
+
+
+>>>>>  blast_formatter
+
+blast_formatter: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:47:42
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  blast_formatter
+
+
+
+>>>>>  blastn_vdb
+
+blastn_vdb: 2.14.0+
+ncbi-vdb: 2.11.2
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:51:27
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  blastn_vdb
+
+
+
+>>>>>  tblastn_vdb
+
+tblastn_vdb: 2.14.0+
+ncbi-vdb: 2.11.2
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 15:02:00
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  tblastn_vdb
+
+
+
+>>>>>  blast_formatter_vdb
+
+blast_formatter_vdb: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:48:16
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  blast_formatter_vdb
+
+
+
+>>>>>  blast_vdb_cmd
+
+blast_vdb_cmd: 2.14.0+
+ Package: blast 2.14.0, build Apr  5 2023 14:09:56
+ Package-Config:  IntelMAC : clang : ./c++/compilers/unix/Clang.sh --without-dll --with-bin-release --without-debug --without-pcre --with-mt --without-openmp --with-flat-makefile --with-ncbi-public --with-experimental=Int8GI --without-gnutls --without-gcrypt --with-vdb=/net/snowman/vol/projects/trace_software/vdb/vdb-versions/cxx_toolkit/2 --with-static-vdb --without-lzo --without-zstd --with-build-root-sfx=--IntelMAC-clang --with-flat-makefile --with-ncbi-public --without-ccache --without-caution --without-runpath --without-makefile-auto-update --with-projects=scripts/projects/blast/project.lst --with-internal
+ Build-Signature:  Clang_1200-ReleaseMT64--x86_64-apple-darwin19.6.0-xcoremake4
+ GI-64bit:  TRUE
+ Build-Date:  Apr  5 2023 14:48:56
+ Build-ID:  395AFD47-0F31-46AB-9FE9-24499649B77B
+ Revision:  665497
+ Subversion-Revision:  665497
+ Stable-Components-Version:  27
+ Production-Version:  20230304
+ Built-As:  blast_vdb_cmd
+
+
+
+
