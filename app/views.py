@@ -5,7 +5,7 @@ from rest_framework.views import APIView, Response
 from django.urls.base import reverse
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView
-from django.db.models import Q
+from django.db.models import F, Q, Value, CharField
 from django.shortcuts import get_object_or_404
 from django.core.files.base import ContentFile
 
@@ -98,8 +98,20 @@ class BlastSearch(APIView):
             with open(result_obj.result_json_file.path, 'rb') as f:
                 raw_blast_json_output = json.load(f)
                 blast_results = raw_blast_json_output.get("BlastOutput2")[0].get("report").get("results").get("search")
-        except:
-            pass
+
+                enriched_hits = blast_results.get("hits", [])
+                for index, hit in enumerate(enriched_hits):
+                    gene_header = hit.get("description", [])[0].get("title", "")
+                    # Expected Format: >Accession, gene name , species
+                    gene_name_query = gene_header.split(",")
+                    if len(gene_name_query) > 1:
+                        matching_gene_obj = Gene.objects.filter(name__icontains=gene_name_query[1].strip())
+                        print(matching_gene_obj)
+                        enriched_hits[index]["matching_genes"] = GeneSerializer(matching_gene_obj, many=True).data
+
+                blast_results["hits"] = enriched_hits
+        except Exception as e:
+            raise e
 
         return Response({
             "result_id": result_obj.id,
