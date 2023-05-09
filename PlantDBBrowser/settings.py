@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "app",
     'background_task',
+    'django_extensions',
+    'import_export',
 ]
 
 MIDDLEWARE = [

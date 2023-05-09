@@ -1,11 +1,13 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
+from import_export.admin import ImportExportModelAdmin
+
 from .models import Category, DataBase, SubCategory, Gene, Species, GeneSuggestion, Maintainer, BlastDatabaseFile, BlastSearchResult
 
 
 @admin.register(Gene)
-class GeneAdmin(admin.ModelAdmin):
+class GeneAdmin(ImportExportModelAdmin):
     list_display = ["name", "species", "symbol", "approved"]
     list_filter = ["approved", "species","function", "experimental_method"]
     search_fields = ["name"]

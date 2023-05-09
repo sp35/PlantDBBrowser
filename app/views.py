@@ -105,7 +105,7 @@ class BlastSearch(APIView):
                     # Expected Format: >Accession, gene name , species
                     gene_name_query = gene_header.split(",")
                     if len(gene_name_query) > 1:
-                        matching_gene_obj = Gene.objects.filter(name__icontains=gene_name_query[1].strip())
+                        matching_gene_obj = Gene.objects.filter(name__iexact=gene_name_query[1].strip())
                         print(matching_gene_obj)
                         enriched_hits[index]["matching_genes"] = GeneSerializer(matching_gene_obj, many=True).data
 
