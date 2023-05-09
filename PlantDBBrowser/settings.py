@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+from . import keyconfig
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-pfayp#-hatr@269za$nntnmn3s583z!-(q_b32-6d4cxh0zy9i"
+SECRET_KEY = keyconfig.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = keyconfig.DEBUG
 
-ALLOWED_HOSTS = ["dreamweb.azurewebsites.net", "localhost"]
+ALLOWED_HOSTS = ["dreamweb.azurewebsites.net", "localhost", "webapp.bits-pilani.ac.in"]
 
 
 # Application definition
@@ -63,7 +65,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "https://red-cliff-0ae92281e.2.azurestaticapps.net",
 ]
-CSRF_TRUSTED_ORIGINS = ["localhost:3000", "127.0.0.1:3000", "red-cliff-0ae92281e.2.azurestaticapps.net"]
+CSRF_TRUSTED_ORIGINS = ["localhost:3000", "127.0.0.1:3000", "red-cliff-0ae92281e.2.azurestaticapps.net", "webapp.bits-pilani.ac.in"]
 CSRF_COOKIE_NAME = "csrftoken"
 CORS_ALLOW_CREDENTIALS = True
 
@@ -92,14 +94,14 @@ WSGI_APPLICATION = "PlantDBBrowser.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-if os.getenv("DATABASE_NAME") is not None:
+if keyconfig.SERVER:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.getenv("DATABASE_NAME"),
-            "USER": os.getenv("DATABASE_USER"),
-            "PASSWORD": os.getenv("DATABASE_PASS"),
-            "HOST": os.getenv("DATABASE_HOST"),
+            "NAME": keyconfig.DATABASE_NAME,
+            "USER": keyconfig.DATABASE_USER,
+            "PASSWORD": keyconfig.DATABASE_PASS,
+            "HOST": keyconfig.DATABASE_HOST,
             "PORT": 5432,
         }
     }
@@ -163,11 +165,14 @@ FILE_UPLOAD_HANDLERS = [
     'django.core.files.uploadhandler.TemporaryFileUploadHandler',
 ]
 
-EMAIL_CONNECTION_STRING = os.getenv("AZURE_COMMUNICATION_SERVICE_CONNECTION_STRING")
-EMAIL_SENDER_ADDRESS = os.getenv("AZURE_COMMUNICATION_SERVICE_SENDER_ADDRESS")
+EMAIL_CONNECTION_STRING = keyconfig.AZURE_COMMUNICATION_SERVICE_CONNECTION_STRING
+EMAIL_SENDER_ADDRESS = keyconfig.AZURE_COMMUNICATION_SERVICE_SENDER_ADDRESS
 
-# NCBI_BLAST_SUITE_PATH = os.path.join(BASE_DIR, "utils", "ncbi", "macosx")
-NCBI_BLAST_SUITE_PATH = os.path.join(BASE_DIR, "utils", "ncbi", "linux")
+if keyconfig.SERVER:
+    NCBI_BLAST_SUITE_PATH = os.path.join(BASE_DIR, "utils", "ncbi", "linux")
+else:
+    NCBI_BLAST_SUITE_PATH = os.path.join(BASE_DIR, "utils", "ncbi", "macosx")
+
 NCBI_MAKEBLASTDB_PATH = os.path.join(NCBI_BLAST_SUITE_PATH, "makeblastdb")
 NCBI_BLAST_NUCL_PATH = os.path.join(NCBI_BLAST_SUITE_PATH, "blastn")
 NCBI_BLAST_PROT_PATH = os.path.join(NCBI_BLAST_SUITE_PATH, "blastp")
