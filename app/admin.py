@@ -21,6 +21,11 @@ class BlastDatabaseFileAdmin(admin.ModelAdmin):
         return mark_safe(obj.makeblastdb_output.replace('\\n', '<br/>'))
 
 
+@admin.register(Species)
+class SpecieseAdmin(ImportExportModelAdmin):
+    list_display = ["id", "name"]
+
+
 # admin.site.register(Category)
 # admin.site.register(SubCategory)
 # admin.site.register(Gene)

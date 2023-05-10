@@ -12,9 +12,12 @@ PATH = os.path.dirname(os.path.realpath(__file__))
 
 from app.models import Gene, Species
 
+xlrd.xlsx.ensure_elementtree_imported(False, None)
+xlrd.xlsx.Element_has_iter = True
+
 
 def gene_excel_parser():
-    loc = os.path.join(PATH, "Gene List-Millet Database-for training.xlsx")
+    loc = os.path.join(PATH, "latest.xlsx")
     book = xlrd.open_workbook(loc)
 
     ordered_columns = [
